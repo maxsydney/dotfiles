@@ -1,0 +1,52 @@
+2024-04-23 22:13:11.405 [info] update#setState idle
+2024-04-23 22:13:23.683 [error] [UtilityProcessWorker]: terminated unexpectedly with code 15, signal: unknown
+2024-04-23 22:13:23.684 [error] [UtilityProcess id: 1, type: fileWatcher, pid: 22783]: crashed with code 15 and reason 'killed'
+2024-04-23 22:13:23.685 [info] Extension host with pid 22762 exited with code: 0, signal: unknown.
+2024-04-23 22:13:41.380 [info] update#setState checking for updates
+2024-04-23 22:13:41.429 [info] update#setState idle
+2024-04-23 23:13:41.385 [info] update#setState checking for updates
+2024-04-23 23:13:41.536 [info] update#setState idle
+2024-04-24 00:13:41.390 [info] update#setState checking for updates
+2024-04-24 00:13:41.542 [info] update#setState idle
+2024-04-24 01:13:41.394 [info] update#setState checking for updates
+2024-04-24 01:13:41.540 [info] update#setState idle
+2024-04-24 02:13:41.398 [info] update#setState checking for updates
+2024-04-24 02:13:41.550 [info] update#setState idle
+2024-04-24 03:13:41.402 [info] update#setState checking for updates
+2024-04-24 03:13:41.557 [info] update#setState idle
+2024-04-24 04:13:41.406 [info] update#setState checking for updates
+2024-04-24 04:13:41.551 [info] update#setState idle
+2024-04-24 05:13:41.410 [info] update#setState checking for updates
+2024-04-24 05:13:41.557 [info] update#setState idle
+2024-04-24 06:13:41.414 [info] update#setState checking for updates
+2024-04-24 06:13:41.551 [info] update#setState idle
+2024-04-24 07:13:41.417 [info] update#setState checking for updates
+2024-04-24 07:13:41.564 [info] update#setState idle
+2024-04-24 08:13:41.420 [info] update#setState checking for updates
+2024-04-24 08:13:41.572 [info] update#setState idle
+2024-04-24 09:13:41.422 [info] update#setState checking for updates
+2024-04-24 09:13:41.568 [info] update#setState idle
+2024-04-24 10:13:41.424 [info] update#setState checking for updates
+2024-04-24 10:13:41.577 [info] update#setState idle
+2024-04-24 11:13:41.426 [info] update#setState checking for updates
+2024-04-24 11:13:41.568 [info] update#setState idle
+2024-04-24 12:13:41.427 [info] update#setState checking for updates
+2024-04-24 12:13:41.575 [info] update#setState idle
+2024-04-24 13:13:41.428 [info] update#setState checking for updates
+2024-04-24 13:13:41.560 [info] update#setState idle
+2024-04-24 14:13:41.430 [info] update#setState checking for updates
+2024-04-24 14:13:41.565 [info] update#setState idle
+2024-04-24 15:13:41.431 [info] update#setState checking for updates
+2024-04-24 15:13:41.569 [info] update#setState idle
+2024-04-24 16:13:41.433 [info] update#setState checking for updates
+2024-04-24 16:13:41.584 [info] update#setState idle
+2024-04-24 17:13:41.437 [info] update#setState checking for updates
+2024-04-24 17:13:41.585 [info] update#setState idle
+2024-04-24 18:13:41.442 [info] update#setState checking for updates
+2024-04-24 18:13:41.585 [info] update#setState idle
+2024-04-24 19:13:41.447 [info] update#setState checking for updates
+2024-04-24 19:13:41.591 [info] update#setState idle
+2024-04-24 20:13:41.452 [info] update#setState checking for updates
+2024-04-24 20:13:41.632 [info] update#setState idle
+2024-04-24 21:05:46.599 [info] Extension host with pid 22907 exited with code: 0, signal: unknown.
+2024-04-24 21:05:46.599 [error] ptyHost terminated unexpectedly with code 0

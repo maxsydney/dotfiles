@@ -1,0 +1,29 @@
+2024-04-23 22:13:11.738 [info] Started local extension host with pid 22762.
+2024-04-23 22:13:14.540 [info] [perf] Render performance baseline is 14ms
+2024-04-23 22:13:24.024 [info] Started local extension host with pid 22907.
+2024-04-23 22:13:26.748 [info] [perf] Render performance baseline is 26ms
+2024-04-23 22:13:30.111 [error] Cancelled: Canceled
+    at _.B (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:785:28974)
+    at async _.z (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:785:25774)
+    at async _.z (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:785:26717)
+    at async Z (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:785:24704)
+    at async _.query (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:785:25002)
+    at async oe.queryGallery (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2909:13350)
+    at async Z.Hc (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2845:23086)
+    at async Z.rc (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2845:14713)
+    at async vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2845:13012
+2024-04-23 22:14:02.413 [error] [Extension Host] (node:22907) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2024-04-23 22:16:07.284 [error] TreeError [DebugHover] Tree element not found: [object Object]: Error: TreeError [DebugHover] Tree element not found: [object Object]
+    at T.o (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:192:29689)
+    at T.setChildren (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:192:26453)
+    at w.setChildren (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:626:6595)
+    at Z.I (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:626:23685)
+    at Z.B (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:626:20735)
+2024-04-23 22:16:34.664 [error] TreeError [DebugHover] Tree element not found: [object Object]: Error: TreeError [DebugHover] Tree element not found: [object Object]
+    at T.o (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:192:29689)
+    at T.setChildren (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:192:26453)
+    at w.setChildren (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:626:6595)
+    at Z.I (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:626:23685)
+    at Z.B (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:626:20735)
+2024-04-23 22:17:59.960 [error] No expression to evaluate

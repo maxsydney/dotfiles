@@ -1,0 +1,28 @@
+2024-04-23 22:13:35.119 [info] Getting Manifest... rust-lang.rust-analyzer
+2024-04-23 22:13:35.125 [info] Installing extension: rust-lang.rust-analyzer
+2024-04-23 22:13:37.955 [info] Extension signature is verified: rust-lang.rust-analyzer
+2024-04-23 22:13:38.128 [info] Extracted extension to file:///home/max/.vscode/extensions/rust-lang.rust-analyzer-0.3.1932-linux-x64: rust-lang.rust-analyzer
+2024-04-23 22:13:38.145 [info] Renamed to /home/max/.vscode/extensions/rust-lang.rust-analyzer-0.3.1932-linux-x64
+2024-04-23 22:13:38.146 [info] Extracting extension completed. rust-lang.rust-analyzer
+2024-04-23 22:13:38.159 [info] Extension installed successfully: rust-lang.rust-analyzer
+2024-04-23 22:13:38.227 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/max/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/max/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30080)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30195)
+    at i.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:36500)
+    at i.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:28946)
+    at async $.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:16092)
+    at async K.sb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:108402)
+2024-04-23 22:13:58.161 [info] Getting Manifest... vadimcn.vscode-lldb
+2024-04-23 22:13:58.166 [info] Installing extension: vadimcn.vscode-lldb
+2024-04-23 22:13:58.966 [info] Extension signature is verified: vadimcn.vscode-lldb
+2024-04-23 22:13:58.971 [info] Extracted extension to file:///home/max/.vscode/extensions/vadimcn.vscode-lldb-1.10.0: vadimcn.vscode-lldb
+2024-04-23 22:13:58.986 [info] Renamed to /home/max/.vscode/extensions/vadimcn.vscode-lldb-1.10.0
+2024-04-23 22:13:58.988 [info] Extracting extension completed. vadimcn.vscode-lldb
+2024-04-23 22:13:59.000 [info] Extension installed successfully: vadimcn.vscode-lldb
+2024-04-23 22:13:59.065 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/max/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/max/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30080)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30195)
+    at i.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:36500)
+    at i.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:28946)
+    at async $.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:16092)
+    at async K.sb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:108402)
