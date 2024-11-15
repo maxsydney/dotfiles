@@ -55,3 +55,17 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 eval "$(direnv hook zsh)"
+
+# SSH connection prompt
+function ssh_server_info() {
+    if [[ -n $SSH_CONNECTION ]]; then
+        echo "%F{yellow}[%n@$(hostname)]%f "
+    fi
+}
+
+# Add colors and formatting
+PROMPT='$(ssh_server_info)%F{green}%~%f %# '
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
