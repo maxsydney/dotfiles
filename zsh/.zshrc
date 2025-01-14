@@ -43,18 +43,20 @@ alias vim="nvim"
 alias gs="git status"
 
 # Add some extra stuff to PATH
-export PATH=$PATH:/home/max/.local/bin
-export PATH=$PATH:/home/max/.bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.bin
 
 # Add some stuff to PYTHONPATH
-export PYTHONPATH=$PYTHONPATH:/home/max/Documents/orbitalMechanics
+export PYTHONPATH=$PYTHONPATH:~/Documents/orbitalMechanics
 
 #Virtualenvwrapper settings:
-export VIRTUALENVWRAPPER_PYTHON=$(which python3)
-export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME=$HOME
 export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 eval "$(direnv hook zsh)"
+
+source ~/.gnc_env
 
 # SSH connection prompt with OneDark yellow
 function ssh_server_info() {

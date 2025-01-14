@@ -88,17 +88,10 @@ return packer.startup(function(use)
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' }
     }
-    use {
-        "nvim-telescope/telescope-live-grep-args.nvim",
-        config = function()
-            require("telescope").load_extension("live_grep_args")
-        end }
+    use { "nvim-telescope/telescope-live-grep-args.nvim" }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {
         "nvim-telescope/telescope-frecency.nvim",
-        config = function()
-            require "telescope".load_extension("frecency")
-        end,
         requires = { "kkharji/sqlite.lua" }
     }
     -- Treesitter
