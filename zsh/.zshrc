@@ -56,15 +56,26 @@ export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 eval "$(direnv hook zsh)"
 
-# SSH connection prompt
+# OneDark colors
+typeset -A ONEDARK=(
+    red     "196;77;67"    # #C44343
+    green   "152;195;121"  # #98C379
+    yellow  "229;192;123"  # #E5C07B
+    blue    "97;175;239"   # #61AFEF
+    purple  "198;120;221"  # #C678DD
+    cyan    "86;182;194"   # #56B6C2
+    white   "171;178;191"  # #ABB2BF
+)
+
+# SSH connection prompt with OneDark yellow
 function ssh_server_info() {
     if [[ -n $SSH_CONNECTION ]]; then
-        echo "%F{yellow}[%n@$(hostname)]%f "
+        echo "%F{#E5C07B}[%n@$(hostname)]%f "
     fi
 }
 
-# Add colors and formatting
-PROMPT='$(ssh_server_info)%F{green}%~%f %# '
+# Show only current directory with OneDark blue
+PROMPT='$(ssh_server_info)%F{#61AFEF}%1~%f %F{#ABB2BF}❯%f '
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
