@@ -110,7 +110,7 @@ return packer.startup(function(use)
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
     use { "mfussenegger/nvim-dap-python" }
     use { "theHamsta/nvim-dap-virtual-text" }
-    use { "nvim-neotest/nvim-nio" }
+    use { "nvim-neotest/nvim-nio" } -- Used by dap-ui
     use { 'nvim-telescope/telescope-dap.nvim' }
     use { 'ldelossa/nvim-dap-projects' }
 
