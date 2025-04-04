@@ -113,6 +113,13 @@ return packer.startup(function(use)
     use { "nvim-neotest/nvim-nio" } -- Used by dap-ui
     use { 'nvim-telescope/telescope-dap.nvim' }
     use { 'ldelossa/nvim-dap-projects' }
+    use {
+        "jay-babu/mason-nvim-dap.nvim",
+        requires = {
+            "williamboman/mason.nvim",
+            "mfussenegger/nvim-dap",
+        }
+    }
 
     -- Visual tweaks
     use { 'stevearc/dressing.nvim' }

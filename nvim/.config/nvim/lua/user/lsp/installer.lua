@@ -27,6 +27,27 @@ require("mason-lspconfig").setup {
 local lspconfig = require("lspconfig")
 local opts = {}
 
+-- Configure mason-lspconfig
+require("mason-lspconfig").setup {
+    ensure_installed = servers,
+}
+
+-- Configure mason-nvim-dap
+local mason_dap_ok, mason_dap = pcall(require, "mason-nvim-dap")
+if mason_dap_ok then
+    mason_dap.setup({
+        ensure_installed = debuggers,
+        automatic_installation = true,
+        handlers = {
+            function(config)
+                -- Default setup for debug adapters
+                require('mason-nvim-dap').default_setup(config)
+            end,
+        },
+    })
+else
+    print("Warning: mason-nvim-dap not available, debug adapters not installed")
+end
 
 --[[ require'lspconfig'.jsonls.setup{} ]]
 
