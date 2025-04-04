@@ -1,29 +1,11 @@
--- Set up codelldb adapter here
+local mason_registry = require("mason-registry")
+local codelldb_path = mason_registry.get_package("codelldb"):get_install_path() .. "/codelldb"
 
 require('dap').adapters.codelldb = {
     type = 'server',
     port = "13000",
     executable = {
-        command = '/home/max/.local/share/nvim/mason/packages/codelldb/codelldb',
+        command = codelldb_path,
         args = { "--port", "13000" },
     }
-}
-
--- Add a default configuration for rust 
-require('dap').configurations.rust = {
-    {
-        name = "Debug file",
-        type = "codelldb",
-        request = "launch",
-        program = function()
-            local default_executable = vim.fn.getcwd() .. '/target/debug/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
-            if vim.fn.filereadable(default_executable) then
-                return default_executable
-            else
-                return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-            end
-        end,
-        cwd = '${workspaceFolder}',
-        stopOnEntry = false,
-    },
 }
