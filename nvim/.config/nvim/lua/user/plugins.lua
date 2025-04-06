@@ -121,6 +121,10 @@ return packer.startup(function(use)
         }
     }
 
+    -- Git integration
+    use { "sindrets/diffview.nvim" }
+
     -- Visual tweaks
     use { 'stevearc/dressing.nvim' }
+    use { 'NeogitOrg/neogit' }
 end)
