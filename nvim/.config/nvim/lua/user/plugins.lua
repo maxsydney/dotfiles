@@ -50,9 +50,7 @@ return packer.startup(function(use)
     use { "moll/vim-bbye" }
     use { "nvim-lualine/lualine.nvim" }
     use { "ahmedkhalf/project.nvim" }
-    use { "lewis6991/impatient.nvim" }
     use { "lukas-reineke/indent-blankline.nvim" }
-    use { "goolord/alpha-nvim" }
     use { "folke/which-key.nvim" }
     use { "ThePrimeagen/harpoon" }
 
@@ -63,6 +61,7 @@ return packer.startup(function(use)
     use { "lunarvim/Onedarker.nvim" }
     use { "ellisonleao/gruvbox.nvim" }
     use { "navarasu/onedark.nvim" }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp" }         -- The completion plugin

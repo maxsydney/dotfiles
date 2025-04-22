@@ -95,7 +95,7 @@ local mappings = {
         name = "Close buffers",
         ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
         ["x"] = { "<cmd>%bd|e#|bd#<CR>", "Close Other Buffers" },
-        ["a"] = { "<cmd>%bd | NvimTreeToggle<CR>", "Close All Buffers" },
+        ["a"] = { "<cmd>bufdo Bdelete<CR>", "Close All Buffers" },
     },
 
     p = {

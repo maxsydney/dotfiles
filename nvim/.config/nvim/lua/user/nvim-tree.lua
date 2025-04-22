@@ -48,9 +48,11 @@ end
 
 nvim_tree.setup {
     on_attach = on_attach,
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
     update_focused_file = {
         enable = true,
-        update_cwd = true,
+        update_root = true,
     },
     renderer = {
         root_folder_modifier = ":t",
