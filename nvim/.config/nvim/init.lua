@@ -13,10 +13,11 @@ require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
 require "user.project"
-require "user.impatient"
 require "user.indentline"
-require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
 require "user.harpoon"
 require "user.debugging"
+
+-- Aaaand enabled caching
+vim.loader.enable()
