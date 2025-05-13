@@ -1,0 +1,46 @@
+import = [
+    # uncomment the flavour you want below:
+    # "~/.config/catppuccin-latte.toml"
+    # "~/.config/catppuccin-frappe.toml"
+    "~/.config/alacritty/catppuccin-macchiato.toml",
+    # "~/.config/catppuccin-mocha.toml"
+]
+[env]
+TERM = "alacritty"
+COLORTERM = "truecolor"
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "Hack Nerd Font"
+style = "Bold Italic"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "none"
+opacity = 1.0
+dynamic_padding = true
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 10
+y = 10
