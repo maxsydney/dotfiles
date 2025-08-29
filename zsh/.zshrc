@@ -41,6 +41,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 alias vim="nvim"
 alias gs="git status"
+alias grc="git rebase --continue"
 
 # Add some extra stuff to PATH
 export PATH=$PATH:~/.local/bin
