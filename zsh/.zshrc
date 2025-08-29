@@ -50,7 +50,7 @@ export PATH=$PATH:/home/max/.bin
 export PYTHONPATH=$PYTHONPATH:/home/max/Documents/orbitalMechanics
 
 #Virtualenvwrapper settings:
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh

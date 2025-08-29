@@ -148,3 +148,19 @@ vim.api.nvim_create_autocmd("FileType", {
         end)
     end
 })
+
+-- Suppress broadcast notifications from DAP
+-- Override the default event listeners
+dap.listeners.after.event_initialized["custom"] = function()
+  -- Use nvim's built-in notification instead of terminal messages
+  vim.notify("DAP initialized", vim.log.levels.INFO)
+end
+
+dap.listeners.after.event_terminated["custom"] = function()
+  vim.notify("DAP terminated", vim.log.levels.INFO)
+end
+
+dap.listeners.after.event_exited["custom"] = function()
+  vim.notify("DAP exited", vim.log.levels.INFO)
+end
+
