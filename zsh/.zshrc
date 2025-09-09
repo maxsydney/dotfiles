@@ -50,14 +50,7 @@ export PATH=$PATH:~/.bin
 # Add some stuff to PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:~/Documents/orbitalMechanics
 
-#Virtualenvwrapper settings:
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=$HOME
-export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh
-eval "$(direnv hook zsh)"
-
-source ~/.gnc_env
+# source ~/.gnc_env
 
 # SSH connection prompt with OneDark yellow
 function ssh_server_info() {
