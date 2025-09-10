@@ -10,7 +10,7 @@ TERM = "alacritty"
 COLORTERM = "truecolor"
 
 [font]
-size = 10.0
+size = 12.0
 
 [font.normal]
 family = "Hack Nerd Font"

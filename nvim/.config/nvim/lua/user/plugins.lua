@@ -43,7 +43,6 @@ return packer.startup(function(use)
     use { "nvim-lua/plenary.nvim" }  -- Useful lua functions used by lots of plugins
     use { "windwp/nvim-autopairs" }  -- Autopairs, integrates with both cmp and treesitter
     use { "numToStr/Comment.nvim" }
-    use { "JoosepAlviste/nvim-ts-context-commentstring" }
     use { "kyazdani42/nvim-web-devicons" }
     use { "kyazdani42/nvim-tree.lua" }
     use { "akinsho/bufferline.nvim" }
@@ -88,17 +87,10 @@ return packer.startup(function(use)
         'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/plenary.nvim' }
     }
-    use {
-        "nvim-telescope/telescope-live-grep-args.nvim",
-        config = function()
-            require("telescope").load_extension("live_grep_args")
-        end }
+    use { "nvim-telescope/telescope-live-grep-args.nvim" }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {
         "nvim-telescope/telescope-frecency.nvim",
-        config = function()
-            require "telescope".load_extension("frecency")
-        end,
         requires = { "kkharji/sqlite.lua" }
     }
     -- Treesitter

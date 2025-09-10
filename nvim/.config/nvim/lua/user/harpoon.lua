@@ -32,9 +32,9 @@ harpoon.setup({
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
-keymap("n", "<M-1>", ":lua require('harpoon.ui').nav_file(1) <CR>", opts)
-keymap("n", "<M-2>", ":lua require('harpoon.ui').nav_file(2) <CR>", opts)
-keymap("n", "<M-3>", ":lua require('harpoon.ui').nav_file(3) <CR>", opts)
-keymap("n", "<M-4>", ":lua require('harpoon.ui').nav_file(4) <CR>", opts)
+keymap("n", "h1", ":lua require('harpoon.ui').nav_file(1) <CR>", opts)
+keymap("n", "h2", ":lua require('harpoon.ui').nav_file(2) <CR>", opts)
+keymap("n", "h3", ":lua require('harpoon.ui').nav_file(3) <CR>", opts)
+keymap("n", "h4", ":lua require('harpoon.ui').nav_file(4) <CR>", opts)
 keymap("n", "<M-n>", ":lua require('harpoon.ui').nav_next() <CR>", opts)
 keymap("n", "<M-p>", ":lua require('harpoon.ui').nav_prev() <CR>", opts)

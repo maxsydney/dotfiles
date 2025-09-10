@@ -156,7 +156,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # Remove title bar
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 3
 
 # Handle multiple windows
 include ~/.config/i3/workspaces.conf
