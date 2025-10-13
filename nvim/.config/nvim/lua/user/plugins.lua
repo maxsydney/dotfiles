@@ -112,6 +112,9 @@ return packer.startup(function(use)
         }
     }
 
+    -- Git
+    use { "sindrets/diffview.nvim" }
+
     -- Visual tweaks
     use { 'stevearc/dressing.nvim' }
 end)

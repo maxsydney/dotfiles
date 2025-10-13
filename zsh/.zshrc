@@ -18,7 +18,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 zstyle ':omz:update' frequency 13
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 plugins=(git z)
 
@@ -36,7 +36,7 @@ export PATH=$PATH:~/.bin
 # Add some stuff to PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:~/Documents/orbitalMechanics
 
-source ~/.gnc_env
+# source ~/.gnc_env
 
 # SSH connection prompt with OneDark yellow
 function ssh_server_info() {

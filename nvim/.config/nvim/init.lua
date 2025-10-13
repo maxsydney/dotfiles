@@ -18,6 +18,7 @@ require "user.whichkey"
 require "user.autocommands"
 require "user.harpoon"
 require "user.debugging"
+require "user.diffview"
 
 -- Aaaand enabled caching
 vim.loader.enable()
