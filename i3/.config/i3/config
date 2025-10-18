@@ -208,4 +208,4 @@ bindsym $mod+Shift+9 move container to workspace 19
 bindsym $mod+Shift+10 move container to workspace 20
 
 exec_always --no-startup-id nitrogen --restore 
-exec_always --no-startup-id ~/.config/polybar/launch.sh --forest
+exec_always --no-startup-id ~/.config/polybar/launch.sh
