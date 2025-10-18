@@ -30,10 +30,10 @@ local lspconfig = require("lspconfig")
 local opts = {}
 
 -- Configure mason-lspconfig
--- require("mason-lspconfig").setup ({
---     ensure_installed = servers,
---     automatic_installation = true,
--- })
+require("mason-lspconfig").setup ({
+    ensure_installed = servers,
+    automatic_installation = true,
+})
 
 -- Configure mason-nvim-dap
 local mason_dap_ok, mason_dap = pcall(require, "mason-nvim-dap")
