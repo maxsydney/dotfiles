@@ -80,7 +80,6 @@ return packer.startup(function(use)
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
-    use { "simrat39/rust-tools.nvim" }
 
     -- Telescope
     use {
