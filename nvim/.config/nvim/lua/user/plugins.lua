@@ -80,7 +80,6 @@ return packer.startup(function(use)
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
-    use { "simrat39/rust-tools.nvim" }
 
     -- Telescope
     use {
@@ -111,6 +110,9 @@ return packer.startup(function(use)
             "mfussenegger/nvim-dap",
         }
     }
+
+    -- Git
+    use { "sindrets/diffview.nvim" }
 
     -- Visual tweaks
     use { 'stevearc/dressing.nvim' }

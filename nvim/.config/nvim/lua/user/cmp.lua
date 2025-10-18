@@ -86,15 +86,7 @@ cmp.setup {
 
     -- Only LSP, buffer, and path sources
     sources = {
-        {
-            name = "nvim_lsp",
-            -- Add this to fix the bufnr error
-            option = {
-                get_bufnrs = function()
-                    return vim.api.nvim_list_bufs()
-                end,
-            }
-        },
+        { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "path" },
     },
@@ -115,4 +107,3 @@ cmp.setup {
         native_menu = false,
     },
 }
-
