@@ -1,10 +1,22 @@
-/* colors */
+/* Catppuccin Macchiato color scheme */
 
 * {
-  al:   #00000000;
-  bg:   #212B30FF;
-  bga:  #263035FF;
-  fg:   #C4C7C5FF;
-  ac:   #EC407AFF;
-  se:   #4DD0E1FF;
+  al:   #00000000;      /* Transparent/alpha */
+  bg:   #24273aEE;      /* Base - 93% opacity for subtle transparency */
+  bga:  #363a4fFF;      /* Surface0 - solid */
+  fg:   #cad3f5FF;      /* Text - solid */
+  ac:   #f5bde6FF;      /* Pink - accent color */
+  se:   #8aadf4FF;      /* Blue - selection color */
+
+  /* Additional Catppuccin Macchiato variants */
+  bg-solid: #24273aFF;  /* Base - solid background */
+  fg-dim:   #8087a2FF;  /* Overlay0 - dimmed foreground */
+  border:   #8aadf466;  /* Blue - semi-transparent border (40% opacity) */
+
+  /* Extra Catppuccin colors for future use */
+  red:      #ed8796FF;  /* Red */
+  green:    #a6da95FF;  /* Green */
+  yellow:   #eed49fFF;  /* Yellow */
+  cyan:     #8bd5caFF;  /* Teal */
+  lavender: #b7bdf8FF;  /* Lavender */
 }

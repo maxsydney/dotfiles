@@ -1,0 +1,34 @@
+/*
+ * Window Switcher
+ *
+ * Shows open windows for quick switching
+ */
+
+@import "base.rasi"
+
+/* Override configuration for window mode */
+configuration {
+    display-window: "  Windows";
+    window-format: "{w} {c:12} {t:*}";
+}
+
+/* Override window width for window switcher */
+window {
+    width: 650px;
+}
+
+/* Override listview for more windows visible */
+listview {
+    lines: 10;
+    spacing: 6px;
+}
+
+/* Custom placeholder for window switcher */
+entry {
+    placeholder: "Search windows...";
+}
+
+/* Show window titles prominently */
+element-text {
+    margin: 0px 0px 0px 8px;
+}

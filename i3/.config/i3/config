@@ -61,9 +61,12 @@ bindsym $mod+l exec betterlockscreen -l dim
 # kill focused window
 bindsym $mod+q kill
 
-# Launcher
-# bindsym $mod+d exec "~/.config/polybar/forest/scripts/launcher.sh &"
-bindsym $mod+d exec rofi -show drun
+# Launcher (includes app launcher and window switcher)
+# Use Left/Right arrow keys or Ctrl+Tab to switch between modes
+bindsym $mod+d exec ~/.config/polybar/scripts/launcher.sh
+
+# Window Switcher (direct shortcut)
+bindsym $mod+Tab exec rofi -no-config -show window -modi drun,window -theme ~/.config/polybar/scripts/rofi/launcher.rasi
 
 # Move the focus between windows
 bindsym $mod+Left focus left
