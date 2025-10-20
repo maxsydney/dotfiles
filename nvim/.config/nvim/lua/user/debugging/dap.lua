@@ -17,77 +17,76 @@ end
 --[[     dapui.close() ]]
 --[[ end ]]
 
-dapui.setup(
-    {
-        controls = {
-            element = "repl",
-            enabled = true,
-            icons = {
-                disconnect = "",
-                pause = "",
-                play = "",
-                run_last = "",
-                step_back = "",
-                step_into = "",
-                step_out = "",
-                step_over = "",
-                terminate = ""
-            }
-        },
-        element_mappings = {},
-        expand_lines = true,
-        floating = {
-            border = "single",
-            mappings = {
-                close = { "q", "<Esc>" }
-            }
-        },
-        force_buffers = true,
+dapui.setup({
+    controls = {
+        element = "repl",
+        enabled = true,
         icons = {
-            collapsed = "",
-            current_frame = "",
-            expanded = ""
-        },
-        layouts = { {
-            elements = { {
-                id = "scopes",
-                size = 0.25
-            }, {
-                id = "breakpoints",
-                size = 0.25
-            }, {
-                id = "stacks",
-                size = 0.25
-            }, {
-                id = "watches",
-                size = 0.25
-            } },
-            position = "left",
-            size = 40
-        }, {
-            elements = { {
-                id = "repl",
-                size = 0.5
-            }, {
-                id = "console",
-                size = 0.5
-            } },
-            position = "bottom",
-            size = 10
-        } },
-        mappings = {
-            edit = "e",
-            expand = { "<CR>", "<2-LeftMouse>" },
-            open = "o",
-            remove = "d",
-            repl = "r",
-            toggle = "t"
-        },
-        render = {
-            indent = 1,
-            max_value_lines = 100
+            disconnect = "",
+            pause = "",
+            play = "",
+            run_last = "",
+            step_back = "",
+            step_into = "",
+            step_out = "",
+            step_over = "",
+            terminate = ""
         }
+    },
+    element_mappings = {},
+    expand_lines = true,
+    floating = {
+        border = "single",
+        mappings = {
+            close = { "q", "<Esc>" }
+        }
+    },
+    force_buffers = true,
+    icons = {
+        collapsed = "",
+        current_frame = "",
+        expanded = ""
+    },
+    layouts = { {
+        elements = { {
+            id = "scopes",
+            size = 0.25
+        }, {
+            id = "breakpoints",
+            size = 0.25
+        }, {
+            id = "stacks",
+            size = 0.25
+        }, {
+            id = "watches",
+            size = 0.25
+        } },
+        position = "left",
+        size = 40
+    }, {
+        elements = { {
+            id = "repl",
+            size = 0.5
+        }, {
+            id = "console",
+            size = 0.5
+        } },
+        position = "bottom",
+        size = 10
+    } },
+    mappings = {
+        edit = "e",
+        expand = { "<CR>", "<2-LeftMouse>" },
+        open = "o",
+        remove = "d",
+        repl = "r",
+        toggle = "t"
+    },
+    render = {
+        indent = 1,
+        max_value_lines = 100
     }
+}
 )
 
 -- Set debugger keymaps
@@ -147,15 +146,14 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Suppress broadcast notifications from DAP
 -- Override the default event listeners
 dap.listeners.after.event_initialized["custom"] = function()
-  -- Use nvim's built-in notification instead of terminal messages
-  vim.notify("DAP initialized", vim.log.levels.INFO)
+    -- Use nvim's built-in notification instead of terminal messages
+    vim.notify("DAP initialized", vim.log.levels.INFO)
 end
 
 dap.listeners.after.event_terminated["custom"] = function()
-  vim.notify("DAP terminated", vim.log.levels.INFO)
+    vim.notify("DAP terminated", vim.log.levels.INFO)
 end
 
 dap.listeners.after.event_exited["custom"] = function()
-  vim.notify("DAP exited", vim.log.levels.INFO)
+    vim.notify("DAP exited", vim.log.levels.INFO)
 end
-

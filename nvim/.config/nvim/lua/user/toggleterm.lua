@@ -26,9 +26,6 @@ toggleterm.setup({
 	},
 })
 
--- Always in insert mode
-vim.cmd('autocmd BufEnter term://* startinsert')
-
 function _G.set_terminal_keymaps()
     local opts = { buffer = 0, noremap = true }
     vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
