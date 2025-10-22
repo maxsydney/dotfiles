@@ -44,16 +44,10 @@ require("lazy").setup({
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
-    { "saadparwaiz1/cmp_luasnip" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-nvim-lua" },
 
     -- Snippets
-    {
-        "L3MON4D3/LuaSnip",
-        version = "v2.*",
-        build = "make install_jsregexp",
-    },
     { "rafamadriz/friendly-snippets" },
 
     -- LSP
@@ -80,6 +74,7 @@ require("lazy").setup({
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
+        event = { "BufReadPost", "BufNewFile" },  -- Lazy load
     },
 
     -- Debugging

@@ -9,7 +9,6 @@
  * Modified for improved UX with combined modes
  */
 
-@import "base.rasi"
 
 /* Configuration for combined modes */
 configuration {
@@ -18,6 +17,8 @@ configuration {
     display-window: " Windows";
     window-format: "{w} {c:12} {t:*}";
 }
+
+@import "base.rasi"
 
 /* Override window width for launcher */
 window {
