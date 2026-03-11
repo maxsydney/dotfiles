@@ -115,23 +115,25 @@ local mappings = {
     },
 
     p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        S = { "<cmd>PackerStatus<cr>", "Status" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
+        name = "Plugins",
+        p = { "<cmd>Lazy<cr>", "Lazy" },
+        s = { "<cmd>Lazy sync<cr>", "Sync" },
+        u = { "<cmd>Lazy update<cr>", "Update" },
+        c = { "<cmd>Lazy clean<cr>", "Clean" },
+        i = { "<cmd>Lazy install<cr>", "Install" },
+        l = { "<cmd>Lazy log<cr>", "Log" },
+        h = { "<cmd>Lazy home<cr>", "Home" },
     },
 
     l = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         d = {
-            "<cmd>Telescope lsp_document_diagnostics<cr>",
+            "<cmd>Telescope diagnostics bufnr=0<cr>",
             "Document Diagnostics",
         },
         w = {
-            "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+            "<cmd>Telescope diagnostics<cr>",
             "Workspace Diagnostics",
         },
         f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },

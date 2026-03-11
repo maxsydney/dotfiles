@@ -68,7 +68,22 @@ vim.lsp.config('*', {
     capabilities = handlers.capabilities,
 })
 
--- Enable all LSP servers using the new vim.lsp.enable() API
--- Servers will load their configs from ~/.config/nvim/lsp/<servername>.lua if they exist,
--- otherwise they'll use nvim-lspconfig's default configs
-vim.lsp.enable(servers)
+-- -- Enable all LSP servers using the new vim.lsp.enable() API
+-- -- Servers will load their configs from ~/.config/nvim/lsp/<servername>.lua if they exist,
+-- -- otherwise they'll use nvim-lspconfig's default configs
+-- vim.lsp.enable(servers)
+-- Instead of just enabling with names, load and apply the configs
+for _, server_name in ipairs(servers) do
+    -- Try to load server-specific config from lsp/<server>.lua
+    local config_ok, server_config = pcall(require, "user.lsp." .. server_name)
+    if config_ok then
+        -- Merge with base capabilities
+        server_config.capabilities = handlers.capabilities
+        vim.lsp.enable(server_name, server_config)
+    else
+        -- Fall back to default config with just capabilities
+        vim.lsp.enable(server_name, {
+            capabilities = handlers.capabilities
+        })
+    end
+end

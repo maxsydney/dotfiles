@@ -64,18 +64,24 @@ telescope.setup {
             find_command = {
                 'fd',
                 '--type', 'file',
-                '--type', 'symlink',
+                -- '--type', 'symlink',
                 '--hidden',
-                '--ignore-file', vim.fn.expand('.rgignore'),
+                '--ignore-file', '.rgignore',
+                '--exclude', '.git',
+                '--exclude', '.cache',
+                '--exclude', 'node_modules',
+                '--exclude', 'external',
+                '--exclude', 'bazel-*',
+                '--exclude', '*.pyc',
             },
         },
     },
     extensions = {
         fzf = {
-            fuzzy = true, -- false will only do exact matching
+            fuzzy = true,                   -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true, -- override the file sorter
-            case_mode = "ignore_case", -- or "ignore_case" or "respect_case"
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "ignore_case",      -- or "ignore_case" or "respect_case"
         },
         frecency = {
             show_scores = true,

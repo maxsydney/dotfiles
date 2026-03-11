@@ -9,7 +9,7 @@ configs.setup({
     auto_install = false,         -- Don't auto-install missing parsers
     highlight = {
         enable = true,            -- false will disable the whole extension
-        additional_vim_regex_highlighting = true,
+        additional_vim_regex_highlighting = false,
     },
     autopairs = {
         enable = true,

@@ -1,3 +1,6 @@
+-- Enable module loader cache first for optimal performance
+vim.loader.enable()
+
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
@@ -19,6 +22,3 @@ require "user.autocommands"
 require "user.harpoon"
 require "user.debugging"
 require "user.diffview"
-
--- Aaaand enabled caching
-vim.loader.enable()
