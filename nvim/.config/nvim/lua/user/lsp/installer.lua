@@ -24,7 +24,6 @@ local servers = {
 local debuggers = {
     "codelldb",       -- For C/C++/Rust
     "python",         -- For Python
-    "cpptools"
 }
 
 -- Configure mason-lspconfig to auto-install servers

@@ -1,6 +1,5 @@
 require("user.debugging.dap")
 require("user.debugging.virtual-text")
-require("user.debugging.configurations.cppdbg")
 require("user.debugging.configurations.python")
 require("user.debugging.configurations.lldb")
 require("user.debugging.configurations.codelldb")
