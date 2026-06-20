@@ -18,7 +18,8 @@ local servers = {
     "lua_ls",               -- Lua
     "taplo",                -- TOML
     "lemminx",              -- XML
-    "jsonls"                -- JSON
+    "jsonls",               -- JSON
+    "ruff",                 -- Python formatting/linting
 }
 
 local debuggers = {

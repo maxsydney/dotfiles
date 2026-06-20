@@ -115,23 +115,23 @@ local mappings = {
     },
 
     p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        S = { "<cmd>PackerStatus<cr>", "Status" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
+        name = "Lazy",
+        c = { "<cmd>Lazy check<cr>", "Check" },
+        i = { "<cmd>Lazy install<cr>", "Install" },
+        s = { "<cmd>Lazy sync<cr>", "Sync" },
+        S = { "<cmd>Lazy<cr>", "Status" },
+        u = { "<cmd>Lazy update<cr>", "Update" },
     },
 
     l = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         d = {
-            "<cmd>Telescope lsp_document_diagnostics<cr>",
+            "<cmd>Telescope diagnostics bufnr=0<cr>",
             "Document Diagnostics",
         },
         w = {
-            "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+            "<cmd>Telescope diagnostics<cr>",
             "Workspace Diagnostics",
         },
         f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
@@ -164,6 +164,16 @@ local mappings = {
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
+    },
+
+    t = {
+        name = "Terminal",
+        g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
+        n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+        u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+        h = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+        p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+        t = { "<cmd>ToggleTerm<cr>", "Terminal" },
     },
 
     h = {
