@@ -3,6 +3,11 @@ require("user.debugging.virtual-text")
 require("user.debugging.configurations.python")
 require("user.debugging.configurations.codelldb")
 
+-- Generic fallback configs. Loaded before nvim-dap-projects so that a
+-- project's .nvim-dap.lua can still override dap.configurations.{cpp,rust}.
+require("user.debugging.configurations.cpp").setup()
+require("user.debugging.configurations.rust").setup()
+
 -- Load nvim-dap-projects last to allow for project specific configuration
 require('nvim-dap-projects').search_project_config()
 

@@ -50,16 +50,13 @@ dapui.setup({
     layouts = { {
         elements = { {
             id = "scopes",
-            size = 0.25
-        }, {
-            id = "breakpoints",
-            size = 0.25
+            size = 0.34
         }, {
             id = "stacks",
-            size = 0.25
+            size = 0.33
         }, {
-            id = "watches",
-            size = 0.25
+            id = "breakpoints",
+            size = 0.33
         } },
         position = "left",
         size = 40
@@ -77,7 +74,7 @@ dapui.setup({
     mappings = {
         edit = "e",
         expand = { "<CR>", "<2-LeftMouse>" },
-        open = "o",
+        open = { "o", "<CR>" },
         remove = "d",
         repl = "r",
         toggle = "t"
@@ -113,6 +110,8 @@ vim.keymap.set('n', '<F23>', function() dap.step_out() end)
 vim.keymap.set('n', '<S-F11>', function() dap.step_out() end)
 vim.keymap.set('n', '<Leader>db', function() dap.toggle_breakpoint() end)
 vim.keymap.set('n', '<Leader>DB', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end)
+vim.keymap.set('n', '<Leader>dB', function() require('telescope').extensions.dap.list_breakpoints() end)
+vim.keymap.set('n', '<Leader>df', function() require('telescope').extensions.dap.frames() end)
 vim.keymap.set('n', '<Leader>lp',
     function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
 vim.keymap.set('n', '<Leader>dr', function() dap.repl.open() end)
@@ -123,16 +122,6 @@ end)
 vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
     require('dap.ui.widgets').preview()
 end)
-vim.keymap.set('n', '<Leader>df', function()
-    local widgets = require('dap.ui.widgets')
-    widgets.centered_float(widgets.frames)
-end)
---[[ vim.keymap.set('n', '<Leader>df', function() require 'telescope'.extensions.dap.frames {} end) ]]
-vim.keymap.set('n', '<Leader>ds', function()
-    local widgets = require('dap.ui.widgets')
-    widgets.centered_float(widgets.scopes)
-end)
-
 -- For closing floating DAP windows with q
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "dap-float",
