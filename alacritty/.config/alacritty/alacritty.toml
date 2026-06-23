@@ -1,6 +1,7 @@
 [env]
 TERM = "alacritty"
 COLORTERM = "truecolor"
+LIBGL_ALWAYS_SOFTWARE = "1"
 
 [font]
 size = 10.0
