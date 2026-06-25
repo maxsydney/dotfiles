@@ -62,14 +62,11 @@ dapui.setup({
         size = 40
     }, {
         elements = { {
-            id = "repl",
-            size = 0.5
-        }, {
             id = "console",
-            size = 0.5
+            size = 1.0
         } },
         position = "bottom",
-        size = 10
+        size = 15
     } },
     mappings = {
         edit = "e",
@@ -114,7 +111,7 @@ vim.keymap.set('n', '<Leader>dB', function() require('telescope').extensions.dap
 vim.keymap.set('n', '<Leader>df', function() require('telescope').extensions.dap.frames() end)
 vim.keymap.set('n', '<Leader>lp',
     function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
-vim.keymap.set('n', '<Leader>dr', function() dap.repl.open() end)
+vim.keymap.set('n', '<Leader>dr', function() dap.repl.toggle() end)
 vim.keymap.set('n', '<Leader>dl', function() dap.run_last() end)
 vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
     require('dap.ui.widgets').hover()
