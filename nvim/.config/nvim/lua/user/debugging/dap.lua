@@ -33,7 +33,11 @@ dapui.setup({
             terminate = ""
         }
     },
-    element_mappings = {},
+    element_mappings = {
+        stacks = {
+            open = { "o", "<CR>" },
+        },
+    },
     expand_lines = true,
     floating = {
         border = "single",
@@ -71,7 +75,7 @@ dapui.setup({
     mappings = {
         edit = "e",
         expand = { "<CR>", "<2-LeftMouse>" },
-        open = { "o", "<CR>" },
+        open = "o",
         remove = "d",
         repl = "r",
         toggle = "t"
