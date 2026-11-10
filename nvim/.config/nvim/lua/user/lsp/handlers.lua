@@ -85,6 +85,12 @@ end
 M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
     lsp_highlight_document(client, bufnr)
+
+    -- Inlay hints are opt-in on the client side: a server may advertise them,
+    -- but nothing is requested or drawn until this is enabled per buffer.
+    if client:supports_method("textDocument/inlayHint") then
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    end
 end
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -92,6 +98,16 @@ if not status_ok then
     return
 end
 
-M.capabilities = cmp_nvim_lsp.default_capabilities()
+-- cmp_nvim_lsp.default_capabilities() returns a completion-only table, and
+-- vim.lsp.config() uses a supplied capabilities table as-is rather than merging
+-- it over the defaults. Merge explicitly, or every capability Nvim advertises
+-- by default is dropped -- including workspace.inlayHint.refreshSupport, without
+-- which a server cannot tell Nvim to re-request hints once it has finished
+-- loading a project.
+M.capabilities = vim.tbl_deep_extend(
+    "force",
+    vim.lsp.protocol.make_client_capabilities(),
+    cmp_nvim_lsp.default_capabilities()
+)
 
 return M

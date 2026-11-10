@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
             { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out, "WarningMsg" },
+            { out,                            "WarningMsg" },
             { "\nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
@@ -38,7 +38,7 @@ require("lazy").setup({
     { "lunarvim/Onedarker.nvim" },
     { "ellisonleao/gruvbox.nvim" },
     { "navarasu/onedark.nvim" },
-    { "catppuccin/nvim", name = "catppuccin" },
+    { "catppuccin/nvim",                    name = "catppuccin" },
 
     -- Completion plugins
     { "hrsh7th/nvim-cmp" },
@@ -74,7 +74,13 @@ require("lazy").setup({
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        event = { "BufReadPost", "BufNewFile" },  -- Lazy load
+        event = { "BufReadPost", "BufNewFile" }, -- Lazy load
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreview", "MarkdownPreviewToggle" },
+        ft = { "markdown" },
+        build = "cd app && npm install && curl -fsSL https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js -o _static/mermaid.min.js",
     },
 
     -- Debugging
@@ -87,7 +93,6 @@ require("lazy").setup({
     { "theHamsta/nvim-dap-virtual-text" },
     { "nvim-neotest/nvim-nio" },
     { "nvim-telescope/telescope-dap.nvim" },
-    { "ldelossa/nvim-dap-projects" },
     {
         "jay-babu/mason-nvim-dap.nvim",
         dependencies = {
