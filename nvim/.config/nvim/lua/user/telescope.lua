@@ -11,7 +11,23 @@ telescope.setup {
 
         prompt_prefix = "> ",
         selection_caret = "> ",
-        path_display = { "smart" },
+        path_display = { "filename_first" },
+        file_ignore_patterns = { "%.git/", "bazel%-" },
+
+        -- On a score tie (e.g. `myfile/a.txt` vs `myfile/myfile.txt`), prefer the
+        -- entry whose filename contains the prompt; else fall back to shorter path.
+        tiebreak = function(current, existing, prompt)
+            local query = prompt:gsub("%s+", ""):lower()
+            local function tail_matches(entry)
+                local tail = entry.ordinal:match("[^/]*$"):lower()
+                return query ~= "" and tail:find(query, 1, true) ~= nil
+            end
+            local cur, exist = tail_matches(current), tail_matches(existing)
+            if cur ~= exist then
+                return cur
+            end
+            return #current.ordinal < #existing.ordinal
+        end,
 
         mappings = {
             i = {
@@ -64,9 +80,9 @@ telescope.setup {
             find_command = {
                 'fd',
                 '--type', 'file',
-                '--type', 'symlink',
                 '--hidden',
-                '--ignore-file', vim.fn.expand('.rgignore'),
+                '--exclude', '.git',
+                '--exclude', 'bazel-*',
             },
         },
     },
