@@ -23,11 +23,9 @@ font pango:JetBrainsMono Nerd Font 12
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# Enable dead keys for spanish accents
-exec_always --no-startup-id setxkbmap -layout us -variant intl
-
-# Remap caps lock key to escape
-exec_always --no-startup-id setxkbmap -option caps:escape
+# Start with plain US layout; toggle Spanish accents (us intl dead keys) with $mod+Shift+s
+exec --no-startup-id setxkbmap -layout us
+bindsym $mod+Shift+s exec --no-startup-id "if setxkbmap -query | grep -q '^variant:.*intl'; then setxkbmap -layout us; notify-send -t 1500 Keyboard 'Accents OFF'; else setxkbmap -layout us -variant intl; notify-send -t 1500 Keyboard 'Accents ON'; fi"
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.

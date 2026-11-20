@@ -33,10 +33,10 @@ alias grc="git rebase --continue"
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.bin
 
-# Add some stuff to PYTHONPATH
-export PYTHONPATH=$PYTHONPATH:~/Documents/orbitalMechanics
+source ~/.local_env
 
-# source ~/.gnc_env
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # SSH connection prompt with OneDark yellow
 function ssh_server_info() {
@@ -45,12 +45,12 @@ function ssh_server_info() {
     fi
 }
 
+# Automatically enable python environments
+eval "$(direnv hook zsh)"
+
 # Show only current directory with OneDark blue
 PROMPT='$(ssh_server_info)%F{#61AFEF}%1~%f %F{#ABB2BF}❯%f '
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"

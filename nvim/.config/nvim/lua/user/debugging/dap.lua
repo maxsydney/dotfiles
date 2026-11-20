@@ -95,13 +95,11 @@ end)
 vim.keymap.set('n', '<F17>', function()
     dap.terminate()
     dapui.close()
-    vim.cmd("NvimTreeOpen")
 end)
 -- macOS sends <S-F5> as either <S-F5> or <F17> depending on terminal
 vim.keymap.set('n', '<S-F5>', function()
     dap.terminate()
     dapui.close()
-    vim.cmd("NvimTreeOpen")
 end)
 
 vim.keymap.set('n', '<F10>', function() dap.step_over() end)
