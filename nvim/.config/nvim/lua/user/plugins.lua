@@ -20,7 +20,6 @@ require("lazy").setup({
     -- Core dependencies
     { "nvim-lua/plenary.nvim" },
     { "windwp/nvim-autopairs" },
-    { "numToStr/Comment.nvim" },
     { "kyazdani42/nvim-web-devicons" },
     { "kyazdani42/nvim-tree.lua" },
     { "akinsho/bufferline.nvim" },
