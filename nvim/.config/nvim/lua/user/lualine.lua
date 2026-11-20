@@ -63,6 +63,48 @@ local spaces = function()
 	return "spaces: " .. vim.bo.shiftwidth
 end
 
+-- LSP $/progress (e.g. rust-analyzer indexing). Empty when nothing is running.
+-- Not vim.lsp.status(): it drains the progress queue on each call, and lualine
+-- renders many times per event. Its output also has a bare "%", which is an
+-- invalid statusline item.
+local progress_tasks = {} -- "client:token" -> { text, seq }
+local progress_seq = 0
+
+local lsp_progress = function()
+	local latest
+	for _, task in pairs(progress_tasks) do
+		if not latest or task.seq > latest.seq then
+			latest = task
+		end
+	end
+	return latest and latest.text or ""
+end
+
+vim.api.nvim_create_autocmd("LspProgress", {
+	group = vim.api.nvim_create_augroup("user.lualine.lsp_progress", {}),
+	callback = function(ev)
+		local params = ev.data and ev.data.params
+		local value = params and params.value
+		if type(value) ~= "table" then
+			return
+		end
+		local key = ev.data.client_id .. ":" .. tostring(params.token)
+		if value.kind == "end" then
+			progress_tasks[key] = nil
+		else
+			local prev = progress_tasks[key]
+			local title = value.title or (prev and prev.title) or ""
+			local text = value.message and (title .. ": " .. value.message) or title
+			if value.percentage then
+				text = value.percentage .. "% " .. text
+			end
+			progress_seq = progress_seq + 1
+			progress_tasks[key] = { title = title, text = (text:gsub("%%", "%%%%")), seq = progress_seq }
+		end
+		lualine.refresh()
+	end,
+})
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -75,7 +117,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
-		lualine_c = {},
+		lualine_c = { lsp_progress },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },

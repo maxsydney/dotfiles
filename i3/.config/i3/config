@@ -161,6 +161,7 @@ client.background       #ffffff
 
 # Remove title bar
 for_window [class="^.*"] border pixel 3
+for_window [class="(?i)matplotlib"] floating enable
 
 # Handle multiple windows
 include ~/.config/i3/workspaces.conf

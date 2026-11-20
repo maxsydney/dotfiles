@@ -41,6 +41,51 @@ M.setup = function()
         opts.border = opts.border or "rounded"
         return orig_util_open_floating_preview(contents, syntax, opts, ...)
     end
+
+    -- Retry inlay hints on ContentModified (-32801). Nvim drops that error,
+    -- and rust-analyzer cancels the post-load request with it when indexing
+    -- ends, then sends no further refresh: no hints until the next edit.
+    local CONTENT_MODIFIED = -32801
+    local MAX_RETRIES = 5
+    local RETRY_DELAY_MS = 500
+    local retries = {} -- bufnr -> retries since the last good response
+    local orig_inlay_hint = vim.lsp.handlers["textDocument/inlayHint"]
+    vim.lsp.handlers["textDocument/inlayHint"] = function(err, result, ctx, cfg)
+        local bufnr = ctx.bufnr
+        if not (err and err.code == CONTENT_MODIFIED and bufnr) then
+            if bufnr then
+                retries[bufnr] = nil
+            end
+            return orig_inlay_hint(err, result, ctx, cfg)
+        end
+        local n = (retries[bufnr] or 0) + 1
+        if n > MAX_RETRIES then
+            retries[bufnr] = nil
+            return orig_inlay_hint(err, result, ctx, cfg)
+        end
+        retries[bufnr] = n
+        vim.defer_fn(function()
+            local client = vim.lsp.get_client_by_id(ctx.client_id)
+            if
+                not client
+                or not vim.api.nvim_buf_is_loaded(bufnr)
+                or not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
+                -- An edit since then already sent a newer request.
+                or vim.lsp.util.buf_versions[bufnr] ~= ctx.version
+            then
+                retries[bufnr] = nil
+                return
+            end
+            -- nil handler: the response comes back through this wrapper.
+            client:request("textDocument/inlayHint", {
+                textDocument = vim.lsp.util.make_text_document_params(bufnr),
+                range = {
+                    start = { line = 0, character = 0 },
+                    ["end"] = { line = vim.api.nvim_buf_line_count(bufnr), character = 0 },
+                },
+            }, nil, bufnr)
+        end, RETRY_DELAY_MS)
+    end
 end
 
 local function lsp_highlight_document(client, bufnr)

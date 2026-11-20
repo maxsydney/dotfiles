@@ -17,6 +17,13 @@ return {
         if vim.api.nvim_buf_get_name(bufnr):match("^diffview://") then
             return
         end
-        lspconfig_root_dir(bufnr, on_dir)
+        -- Files with no Cargo.toml, rust-project.json or .git above them (e.g.
+        -- git difftool's /tmp/git-blob-*/ copies) resolve to a nil root, which
+        -- would start an extra rootless rust-analyzer. Skip those.
+        lspconfig_root_dir(bufnr, function(dir)
+            if dir then
+                on_dir(dir)
+            end
+        end)
     end,
 }

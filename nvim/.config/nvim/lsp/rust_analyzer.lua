@@ -4,7 +4,7 @@ return {
     settings = {
         ["rust-analyzer"] = {
             cargo = { targetDir = true },
-            check = { command = "clippy", allTargets = true },
+            check = { command = "clippy", allTargets = false },
             inlayHints = {
                 maxLength = 15,
                 typeHints = {
